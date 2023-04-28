@@ -44,3 +44,7 @@ func _on_area_2d_body_exited(body):
 	is_player_inside=false
 
 
+
+
+func _on_safe_zone_body_entered(body):
+	pass # Replace with function body.

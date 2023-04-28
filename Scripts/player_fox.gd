@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var health=100
 
 @onready var death_bar=get_node("/root/Desert/UI/death_bar")
+@onready var water_bar=get_node("/root/Desert/UI/Sprite2D/water_bar")
 
 func _physics_process(_delta):
 	# Getting direction
@@ -46,8 +47,11 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_safe_zone_body_exited(body):
+	if(water_bar.flag!=0):	
+		water_bar.flag=2
 	death_bar.resumeTween()
 
 
 func _on_safe_zone_body_entered(body):
+	water_bar.flag=1
 	death_bar.pauseTween()

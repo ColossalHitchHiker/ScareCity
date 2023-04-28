@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctr4cew2n3vta"]
+[gd_scene load_steps=30 format=3 uid="uid://ctr4cew2n3vta"]
 
 [ext_resource type="PackedScene" uid="uid://c8mdvi3ac48q3" path="res://Items/chest_desert.tscn" id="1_44eyj"]
 [ext_resource type="PackedScene" uid="uid://jovibygndfwk" path="res://UI/health_bar.tscn" id="1_f7f70"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Scripts/health_bar.gd" id="13_uequb"]
 [ext_resource type="Texture2D" uid="uid://bwbky4v7y8ykj" path="res://Art/lower_background.png" id="14_logcd"]
 [ext_resource type="PackedScene" uid="uid://dg244u18hhn5j" path="res://UI/death_bar.tscn" id="16_aicwi"]
+[ext_resource type="PackedScene" uid="uid://bw45bp3mp8ouv" path="res://Items/water_bottle.tscn" id="18_wfuwx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ud87r"]
 texture = ExtResource("2_18bqe")
@@ -5403,6 +5404,7 @@ offset_left = 204.0
 offset_top = 12.0
 offset_right = 428.0
 offset_bottom = 28.0
+timer = 10
 
 [node name="Timer" type="Timer" parent="UI/death_bar"]
 
@@ -5412,6 +5414,9 @@ offset_top = 8.0
 offset_right = 128.0
 offset_bottom = 18.0
 script = ExtResource("13_uequb")
+
+[node name="Sprite2D" parent="UI" instance=ExtResource("18_wfuwx")]
+position = Vector2(37, 334)
 
 [node name="SpikeMap" type="TileMap" parent="."]
 z_index = 4
