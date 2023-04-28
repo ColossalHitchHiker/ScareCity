@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://csk42b347jdly"]
+
+[ext_resource type="Texture2D" uid="uid://dh5aah1ndrpp2" path="res://Art/healthbar_fill.png" id="1_u54rs"]
+[ext_resource type="Script" path="res://Items/test.gd" id="2_p6r23"]
+
+[node name="test" type="Sprite2D"]
+position = Vector2(-22, 21)
+scale = Vector2(-2.89211, 2.71303)
+texture = ExtResource("1_u54rs")
+script = ExtResource("2_p6r23")

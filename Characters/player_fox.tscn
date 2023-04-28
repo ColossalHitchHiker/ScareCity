@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://g0gwa5tn38le"]
+
+[ext_resource type="Texture2D" uid="uid://cohav8lxfwq0w" path="res://Art/Fox Sprite Sheet.png" id="1_k1r02"]
+[ext_resource type="Script" path="res://Scripts/player_fox.gd" id="1_mbu2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8xnb"]
+size = Vector2(12, 7)
+
+[node name="PlayerFox" type="CharacterBody2D"]
+script = ExtResource("1_mbu2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k1r02")
+hframes = 14
+vframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 13.5)
+shape = SubResource("RectangleShape2D_j8xnb")
