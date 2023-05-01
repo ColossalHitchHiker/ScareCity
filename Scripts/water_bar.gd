@@ -10,7 +10,7 @@ func _process(_delta):
 	if self.value<=11:
 		joever()
 
-func _input(event:InputEvent):
+func _input(_event:InputEvent):
 	if(Input.get_action_strength("action") and flag==2):
 		#decrease water
 		self.value-=20

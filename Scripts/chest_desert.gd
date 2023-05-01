@@ -1,50 +1,51 @@
 extends AnimatedSprite2D
 
 @export var object_scene:PackedScene=null
-@onready var drop="res://Items/test.tscn"
 
 @onready var is_player_inside:bool=false
 @onready var is_opened:bool=false
 
 @onready var animationplayer: AnimationPlayer = get_node("AnimationPlayer")
 @onready var tween
+@onready var desert=get_node("/root/Desert")
 
 
 func _ready():
-	tween=get_tree().create_tween()
 	assert(object_scene!=null)
 	animationplayer.play("Idle")
+	$Label.visible=false
 
-func _input(event:InputEvent):
+func _input(_event:InputEvent):
 	if (Input.get_action_strength("interact") and is_player_inside and not is_opened):
 		is_opened=true
+		desert.copened+=1
 		animationplayer.play("Open")
-	
 		
 func drop_object()->void:
-	var object = load(drop)
-	var objectD = object.instantiate()
-	add_child(objectD)
+	var value=generate_Ice()
+	$Label.text="+"+str(value)
+	Game.Ice+=value
+	$Label.visible=true
+	tween=get_tree().create_tween()
+	tween.tween_property($Label,"position",$Label.position-Vector2(0,15),1)
+	tween.tween_property($Label,"modulate:a",0,0.2)
 
-	#tween.bezier_interpolate(objectD, "position", position, position + Vector2(0, -5), 0.3).set_trans(Tween.TRANS_QUAD, Tween.EASE_OUT)
-	#tween.start()
-	#await (tween)
+func generate_Ice():
+	var rand_num = randf()
+	if rand_num < 3.0/5:
+		return 20
+	elif rand_num < 3.0/5 + 1.0/3:
+		return 30
+	elif rand_num < 3.0/5 + 1.0/3 + 1.0/3:
+		return 40
+	else:
+		return 50
 
-	#tween.bezier_interpolate(objectD, "position", position + Vector2(0, -5), position, .3).set_trans(Tween.TRANS_SINE, Tween.EASE_OUT)
-	#tween.start()
-
-
-
-func _on_area_2d_body_entered(body):
-	is_player_inside=true
-
-
-
-func _on_area_2d_body_exited(body):
-	is_player_inside=false
+func _on_chest_body_entered(body):
+	if body.is_in_group("player"):
+		is_player_inside=true
 
 
-
-
-func _on_safe_zone_body_entered(body):
-	pass # Replace with function body.
+func _on_chest_body_exited(body):
+	if body.is_in_group("player"):
+		is_player_inside=false

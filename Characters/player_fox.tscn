@@ -1,10 +1,179 @@
-[gd_scene load_steps=4 format=3 uid="uid://g0gwa5tn38le"]
+[gd_scene load_steps=29 format=3 uid="uid://g0gwa5tn38le"]
 
 [ext_resource type="Texture2D" uid="uid://cohav8lxfwq0w" path="res://Art/Fox Sprite Sheet.png" id="1_k1r02"]
 [ext_resource type="Script" path="res://Scripts/player_fox.gd" id="1_mbu2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8xnb"]
-size = Vector2(12, 7)
+size = Vector2(12, 6)
+
+[sub_resource type="Animation" id="Animation_g6nep"]
+resource_name = "jumpstart"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [42, 43, 44, 45]
+}
+
+[sub_resource type="Animation" id="Animation_3qfhi"]
+resource_name = "jumpturn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [46, 47]
+}
+
+[sub_resource type="Animation" id="Animation_ramgc"]
+resource_name = "jump end"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52]
+}
+
+[sub_resource type="Animation" id="Animation_b2wt8"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_gn1o1"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31, 32, 33, 34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_xecwm"]
+resource_name = "death"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [85, 86, 87, 88, 89, 90]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xhrn"]
+_data = {
+"Idle": SubResource("Animation_b2wt8"),
+"death": SubResource("Animation_xecwm"),
+"jump end": SubResource("Animation_ramgc"),
+"jumpstart": SubResource("Animation_g6nep"),
+"jumpturn": SubResource("Animation_3qfhi"),
+"run": SubResource("Animation_gn1o1")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v0re8"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_enjqe"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hjv4i"]
+animation = &"jump end"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_771uq"]
+animation = &"jumpstart"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wler5"]
+animation = &"jumpturn"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qeomo"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3a35c"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tywv1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dnj31"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a8jlv"]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_trc7v"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l7cwj"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h8dvd"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gl5qe"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ck641"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l5obo"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6rijw"]
+states/End/position = Vector2(1055, 92)
+states/Idle/node = SubResource("AnimationNodeAnimation_v0re8")
+states/Idle/position = Vector2(437, 92)
+states/Start/position = Vector2(230, 92)
+states/death/node = SubResource("AnimationNodeAnimation_enjqe")
+states/death/position = Vector2(875, 92)
+"states/jump end/node" = SubResource("AnimationNodeAnimation_hjv4i")
+"states/jump end/position" = Vector2(674, 205)
+states/jumpstart/node = SubResource("AnimationNodeAnimation_771uq")
+states/jumpstart/position = Vector2(308, 205)
+states/jumpturn/node = SubResource("AnimationNodeAnimation_wler5")
+states/jumpturn/position = Vector2(502, 205)
+states/run/node = SubResource("AnimationNodeAnimation_qeomo")
+states/run/position = Vector2(692, 92)
+transitions = ["Idle", "run", SubResource("AnimationNodeStateMachineTransition_3a35c"), "Idle", "jumpstart", SubResource("AnimationNodeStateMachineTransition_tywv1"), "jumpstart", "jumpturn", SubResource("AnimationNodeStateMachineTransition_dnj31"), "jumpturn", "jump end", SubResource("AnimationNodeStateMachineTransition_a8jlv"), "run", "Idle", SubResource("AnimationNodeStateMachineTransition_trc7v"), "jump end", "Idle", SubResource("AnimationNodeStateMachineTransition_l7cwj"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_h8dvd"), "run", "death", SubResource("AnimationNodeStateMachineTransition_gl5qe"), "jump end", "death", SubResource("AnimationNodeStateMachineTransition_ck641"), "death", "End", SubResource("AnimationNodeStateMachineTransition_l5obo")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_bujay"]
 
 [node name="PlayerFox" type="CharacterBody2D"]
 script = ExtResource("1_mbu2n")
@@ -13,7 +182,19 @@ script = ExtResource("1_mbu2n")
 texture = ExtResource("1_k1r02")
 hframes = 14
 vframes = 7
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 13.5)
+position = Vector2(1, 13)
 shape = SubResource("RectangleShape2D_j8xnb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7xhrn")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_6rijw")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_bujay")

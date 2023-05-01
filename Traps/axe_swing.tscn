@@ -1,0 +1,203 @@
+[gd_scene load_steps=19 format=3 uid="uid://coqilb3ikrguc"]
+
+[ext_resource type="Texture2D" uid="uid://mahf4ujfisyt" path="res://Art/Foozle_2DT0007_Cave_and_Desert_Tileset_Pixel_Art/Traps/PNGs/Swinging axe.png" id="1_sskmk"]
+[ext_resource type="Script" path="res://Scripts/axe_swing.gd" id="1_yuacn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvwq7"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6jj3"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfr01"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c643n"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfrto"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(512, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n36tg"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(640, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4jfi"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(768, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x44el"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(896, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueu2u"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(1024, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dotix"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(1152, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jokhr"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(1280, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_450cu"]
+atlas = ExtResource("1_sskmk")
+region = Rect2(1408, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bo5lv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvwq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6jj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfr01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c643n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfrto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n36tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4jfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x44el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueu2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dotix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jokhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_450cu")
+}],
+"loop": true,
+"name": &"Swing",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_qxj7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Swing"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/Axe_swing/CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(-56, -32, -54, -27, -54, -23, -57, -19, -55, -16, -48, -12, -39, -12, -35, -13, -30, -16, -27, -18, -28, -21, -30, -23, -31, -25, -30, -28, -28, -28, -28, -32)]
+}
+
+[sub_resource type="Animation" id="Animation_l7anw"]
+resource_name = "Swing"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Swing"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/Axe_swing/CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.15, 0.45, 0.6, 0.75, 0.9, 1.35, 1.5, 1.65, 1.76),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-56, -32, -54, -27, -54, -23, -57, -19, -55, -16, -48, -12, -39, -12, -35, -13, -30, -16, -27, -18, -28, -21, -30, -23, -31, -25, -30, -28, -28, -28, -28, -32), PackedVector2Array(-36, 10, -36, 13, -35, 14, -35, 16, -34, 16, -34, 20, -34, 21, -29, 21, -23, 19, -19, 16, -15, 12, -13, 6, -13, 0, -16, 0, -18, -1, -20, -1, -20, -3, -21, -3, -23, -6, -28, -10, -30, -11, -30, -14, -31, -14, -31, -18, -37, -19, -43, -15, -49, -9, -52, -3, -52, 3, -47, 3, -46, 4, -44, 5, -42, 6, -43, 12, -37, 12), PackedVector2Array(-4, 2, -5, 5, -8, 5, -11, 3, -14, 1, -17, 5, -20, 13, -20, 19, -18, 25, -14, 31, -9, 28, -5, 27, -1, 31, 1, 31, 4, 28, 8, 27, 12, 30, 13, 31, 17, 27, 20, 21, 20, 12, 17, 5, 15, 2, 13, 1, 8, 4, 6, 5, 4, 4, 4, 2), PackedVector2Array(20, -6, 21, -4, 20, -2, 20, -1, 17, -1, 17, 0, 13, 0, 13, 7, 16, 12, 19, 16, 23, 19, 28, 21, 34, 21, 34, 16, 35, 16, 35, 13, 37, 13, 38, 12, 43, 12, 43, 7, 44, 6, 44, 4, 47, 4, 48, 3, 52, 3, 52, -2, 51, -5, 50, -8, 48, -11, 46, -13, 43, -15, 40, -17, 37, -18, 31, -18, 31, -14, 30, -14, 30, -11, 28, -11, 28, -10, 26, -10, 24, -10), PackedVector2Array(28, -28, 30, -28, 30, -26, 31, -26, 30, -24, 28, -21, 27, -19, 29, -16, 34, -13, 38, -12, 45, -12, 49, -13, 54, -16, 57, -18, 55, -20, 54, -24, 54, -26, 54, -29, 56, -31, 57, -32, 28, -32), PackedVector2Array(20, -6, 21, -4, 20, -2, 18, -1, 16, 0, 13, 0, 13, 6, 15, 10, 18, 15, 21, 18, 24, 19, 27, 20, 29, 21, 34, 21, 34, 16, 35, 16, 35, 13, 37, 13, 38, 12, 43, 12, 43, 7, 44, 6, 44, 4, 47, 4, 47, 3, 52, 3, 52, -2, 51, -3, 51, -5, 50, -5, 50, -8, 49, -9, 48, -9, 48, -11, 47, -11, 46, -13, 45, -14, 44, -15, 42, -16, 40, -17, 37, -18, 31, -18, 31, -15, 30, -14, 30, -12, 28, -11, 27, -9, 25, -11), PackedVector2Array(-14, 1, -16, 4, -19, 9, -20, 13, -20, 18, -19, 23, -16, 28, -14, 31, -13, 31, -11, 29, -7, 27, -5, 27, -3, 29, -1, 31, 1, 31, 3, 29, 5, 28, 6, 27, 8, 27, 9, 28, 12, 29, 13, 31, 14, 31, 16, 29, 19, 24, 19, 19, 20, 18, 20, 12, 19, 10, 18, 7, 16, 3, 15, 2, 13, 1, 10, 3, 9, 4, 6, 5, 4, 4, 4, 2, -4, 2, -4, 4, -6, 4, -6, 5, -8, 5, -8, 4, -10, 4, -10, 3, -11, 3, -12, 2, -13, 1), PackedVector2Array(-36, 10, -36, 13, -35, 14, -35, 16, -34, 16, -34, 20, -34, 21, -29, 21, -23, 19, -19, 16, -15, 12, -13, 6, -13, 0, -16, 0, -18, -1, -20, -1, -20, -3, -21, -3, -23, -6, -28, -10, -30, -11, -30, -14, -31, -14, -31, -18, -37, -19, -43, -15, -49, -9, -52, -3, -52, 3, -47, 3, -46, 4, -44, 5, -42, 6, -43, 12, -37, 12), PackedVector2Array(-57, -32, -55, -29, -53, -26, -54, -24, -55, -21, -57, -19, -55, -16, -49, -13, -45, -12, -38, -12, -34, -14, -30, -16, -28, -17, -27, -18, -29, -20, -30, -23, -31, -25, -30, -26, -30, -28, -28, -28, -28, -32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gg6pe"]
+_data = {
+"RESET": SubResource("Animation_qxj7h"),
+"Swing": SubResource("Animation_l7anw")
+}
+
+[node name="Axe" type="Node2D"]
+script = ExtResource("1_yuacn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 32)
+sprite_frames = SubResource("SpriteFrames_bo5lv")
+animation = &"Swing"
+
+[node name="Axe_swing" type="Area2D" parent="AnimatedSprite2D"]
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/Axe_swing"]
+polygon = PackedVector2Array(-56, -32, -54, -27, -54, -23, -57, -19, -55, -16, -48, -12, -39, -12, -35, -13, -30, -16, -27, -18, -28, -21, -30, -23, -31, -25, -30, -28, -28, -28, -28, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gg6pe")
+}
+
+[node name="Timer" type="Timer" parent="."]

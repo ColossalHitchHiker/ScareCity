@@ -4,7 +4,6 @@ extends TextureProgressBar
 var timer = 3
 @onready var tween
 @onready var flag=1
-@onready var player = get_node("/root/Desert/PlayerFox")
 
 
 func _ready():
@@ -37,4 +36,4 @@ func addJuice(value):
 	
 func _on_timer_timeout():
 	if flag==0:
-		player.health -= 10
+		Game.playerHP -= 10

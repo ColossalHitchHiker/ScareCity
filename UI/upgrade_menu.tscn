@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwxcgo1d4g31b"]
+
+[ext_resource type="Script" path="res://UI/upgrade_menu.gd" id="1_mk5qx"]
+
+[node name="UpgradeUI" type="Node2D"]
+script = ExtResource("1_mk5qx")
+
+[node name="UpgradeUI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="UpgradeUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.509804, 0.239216, 0)
+
+[node name="Control" type="Control" parent="UpgradeUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="ColorRect" parent="UpgradeUI/Control"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 431.0
+offset_right = 1282.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 0.290196)
+
+[node name="Label" type="Label" parent="UpgradeUI/Control/Panel"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 15.0
+offset_right = 264.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.811765, 0.854902, 0.666667, 1)
+theme_override_font_sizes/font_size = 40
+text = "UPGRADE"
+horizontal_alignment = 1
+
+[node name="speed" type="Label" parent="UpgradeUI/Control/Panel"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 76.0
+offset_right = 159.0
+offset_bottom = 134.0
+theme_override_colors/font_color = Color(0.811765, 0.854902, 0.666667, 1)
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 1
+
+[node name="jump" type="Label" parent="UpgradeUI/Control/Panel"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 138.0
+offset_right = 159.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0.811765, 0.854902, 0.666667, 1)
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 1
+
+[node name="speedUP" type="Button" parent="UpgradeUI/Control/Panel"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 84.0
+offset_right = 346.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 30
+text = "Speed"
+
+[node name="jumpUP" type="Button" parent="UpgradeUI/Control/Panel"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 143.0
+offset_right = 349.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 30
+text = "Jump Height
+"
+
+[connection signal="pressed" from="UpgradeUI/Control/Panel/speedUP" to="." method="_on_speed_up_pressed"]
+[connection signal="pressed" from="UpgradeUI/Control/Panel/jumpUP" to="." method="_on_jump_up_pressed"]

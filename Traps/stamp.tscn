@@ -1,0 +1,220 @@
+[gd_scene load_steps=22 format=3 uid="uid://48b582nbqhbq"]
+
+[ext_resource type="Script" path="res://Scripts/Stamp.gd" id="1_xamdr"]
+[ext_resource type="Texture2D" uid="uid://cjddt7t7plcux" path="res://Art/Foozle_2DTR0001_Pixel_Trap_Pack/Ceiling Trap/PNGs/Ceiling Trap - Level 1.png" id="2_6swgt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isu6j"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3bs5"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbh3n"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ol3p"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63nv4"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhumd"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs46y"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0ugq"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_207um"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc46x"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib870"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a70tg"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsbdl"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib03c"]
+atlas = ExtResource("2_6swgt")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dp1il"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isu6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3bs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbh3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ol3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63nv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhumd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs46y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0ugq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_207um")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc46x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib870")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a70tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsbdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib03c")
+}],
+"loop": true,
+"name": &"Trap",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n0co"]
+size = Vector2(30, 5)
+
+[sub_resource type="Animation" id="Animation_jbdj7"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Trap"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/Area2D/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -21.5)]
+}
+
+[sub_resource type="Animation" id="Animation_hdsvs"]
+resource_name = "Trap"
+length = 3.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Trap"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5, 1.65, 1.8, 1.95, 2.1, 2.25, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/Area2D/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.5, 0.575, 0.6, 1.05, 1.175, 1.2, 1.3, 1.325, 1.35, 1.475, 1.5, 1.625, 1.65, 1.775, 1.8, 1.925, 1.95, 2.1, 2.25, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -21.5), Vector2(0, -21), Vector2(0, -21), Vector2(0, -21), Vector2(0, 30), Vector2(0, 30), Vector2(0, 30), Vector2(0, 20), Vector2(0, 20), Vector2(0, 20), Vector2(0, 9), Vector2(0, 9), Vector2(0, 1), Vector2(0, 0.999999), Vector2(0, -6), Vector2(0, -6), Vector2(0, -13), Vector2(0, -13), Vector2(0, -19), Vector2(0, -21), Vector2(0, -22), Vector2(0, -21)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pr6wm"]
+_data = {
+"RESET": SubResource("Animation_jbdj7"),
+"Trap": SubResource("Animation_hdsvs")
+}
+
+[node name="Stamp" type="Node2D"]
+script = ExtResource("1_xamdr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 32)
+sprite_frames = SubResource("SpriteFrames_dp1il")
+animation = &"Trap"
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, -21.5)
+shape = SubResource("RectangleShape2D_7n0co")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pr6wm")
+}
+
+[node name="Timer" type="Timer" parent="."]

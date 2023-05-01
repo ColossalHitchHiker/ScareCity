@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0p8eg11hae2o"]
+
+[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_73ldw"]
+
+[node name="PauseMenu" type="Node2D"]
+script = ExtResource("1_73ldw")
+
+[node name="PauseUI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="PauseUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.509804, 0.239216, 0.431373)
+
+[node name="PauseMenuControl" type="Control" parent="PauseUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseUI/PauseMenuControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseUI/PauseMenuControl/CenterContainer"]
+custom_minimum_size = Vector2(400, 180)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseUI/PauseMenuControl/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseUI/PauseMenuControl/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseUI/PauseMenuControl/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.811765, 0.854902, 0.666667, 1)
+theme_override_font_sizes/font_size = 40
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PauseUI/PauseMenuControl/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="PauseUI/PauseMenuControl/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "RESUME"
+
+[node name="quitMM" type="Button" parent="PauseUI/PauseMenuControl/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "QUIT TO MAIN MENU"
+
+[connection signal="pressed" from="PauseUI/PauseMenuControl/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseUI/PauseMenuControl/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/quitMM" to="." method="_on_quit_mm_pressed"]
